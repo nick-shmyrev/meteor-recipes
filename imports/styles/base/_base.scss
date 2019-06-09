@@ -34,11 +34,11 @@
     transform :translate3d(0, 0, 0);
   }
   50% {
-    transform: translate3d(0, -135px, 0);
+    transform: translate3d(0, -3px, 0);
   }
   51% {
     z-index: 10;
-    transform: translate3d(0, -135px, 0);
+    transform: translate3d(0, -3px, 0);
   }
   100% {
     z-index: 10;

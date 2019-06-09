@@ -185,7 +185,7 @@ input, select, textarea {
   
   &:hover {
     box-shadow: shadow-level(3);
-    // animation card 0.6s ease 1 forwards
+     animation: card 0.3s ease 1 forwards;
   }
 }
 
