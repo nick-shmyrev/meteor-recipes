@@ -1,0 +1,212 @@
+.page-title {
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 30px;
+};
+
+.billboard {
+  background: $dark-purp;
+  color: #FFF;
+  font-size: 2em;
+  text-align: center;
+  padding: 60px;
+  
+  h2 {
+    margin: 0;
+  }
+}
+
+.main-layout {
+  width: 90vw;
+  margin: 20px auto 0;
+  
+  @media screen and (min-width: $med) {
+    width: 90vw;
+    margin: 20px auto 0;
+    padding-left: $side-nav;
+  }
+  @media screen and (min-width: $large) {
+    width: 80vw;
+    margin: 40px auto 0;
+    padding-left: $side-nav-large;
+  }
+}
+
+.new-recipe {
+  margin-bottom: 20px;
+}
+
+.new-recipe-container {
+  position: relative;
+  background: #FFF;
+  padding: 20px;
+  margin-bottom: 60px;
+  box-shadow: shadow-level(2);
+  .fa-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 20px;
+    cursor: pointer;
+    transition: transition();
+    &:hover {
+      transform: scale(1.5);
+    }
+  }
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  textarea, input {
+    width: 100%;
+  }
+}
+
+input, select, textarea {
+  color: $purp;
+  background: #FFF;
+  border: solid 2px $light-grey;
+  border-radius: 2px;
+  font-weight: 800;
+  width: 100%;
+  padding: 6px 10px;
+  margin-bottom: 10px;
+  &.static-input {
+    border: none;
+    background: transparent;
+  }
+}
+
+.list-group {
+  list-style: none;
+  padding: 0;
+}
+
+.panel-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  .form-group {
+    width: unset;
+  }
+  @media screen and (min-width: $med) {
+    flex-direction: row;
+    justify-content: space-between;
+    .form-group {
+      //lost-column 1/2
+      width: 48%;
+    }
+  }
+}
+
+.autoform-remove-item.btn {
+  background: $light-grey;
+  box-shadow: none;
+  border: none;
+  border-radius: 50%;
+  font-size: 1em;
+  height: 26px;
+  width: 26px;
+  text-align: center;
+  display: block;
+  padding: 0;
+}
+
+.autoform-add-item.btn {
+  width: 100%;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  background: $light-grey;
+}
+
+.autoform-remove-item-wrap {
+  vertical-align: middle;
+}
+
+.recipe {
+  background: #FFF;
+  padding: 0 20px 20px;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+  box-shadow: shadow-level(1);
+  transition: transition();
+  &.in-menu {
+    background: lighten($teal, 7);
+    color: #FFF;
+    h3 {
+      color: #FFF;
+      border-bottom: #FFF solid 3px;
+      opacity: 1;
+    }
+  }
+  h3 {
+    color: #d0d0d0;
+    font-size: 3em;
+    //opacity: 0.3;
+    border-bottom: #d0d0d0 solid 3px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding-right: 80px;
+  }
+  button {
+    margin-top: 20px;
+  }
+  
+  .fa-trash {
+    opacity: 0.3;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 1.6em;
+    display: block;
+    padding: 20px;
+    color: black;
+    transition: transition();
+    &:hover {
+      color: $red;
+      opacity: 0.6;
+    }
+  }
+  .fa-pencil {
+    @extend .fa-trash;
+    right: 40px;
+    &:hover {
+      color: $dark-purp;
+    }
+  }
+  .ingredient {
+    display: block;
+    margin-right: 10px;
+    font-size: 1em;
+  }
+  
+  &:hover {
+    box-shadow: shadow-level(3);
+    // animation card 0.6s ease 1 forwards
+  }
+}
+
+.menu-item {
+  @extend .recipe;
+}
+
+.shopping-list {
+  @extend .recipe;
+  padding: 50px 5%;
+  list-style: none;
+  li {
+    font-size: 2em;
+    padding: 20px;
+    border-bottom: 1px solid $light-grey;
+    border-top: 1px solid $light-grey;
+  }
+  & + li {
+    border-top: none;
+  }
+  .list-item-name {
+    font-weight: bold;
+  }
+}

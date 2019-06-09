@@ -1,0 +1,21 @@
+<template name="RecipesPage">
+  <h1 class="page-title">My Recipes</h1>
+
+  {{#if not showRecipeForm}}
+      <button class="new-recipe">New Recipe</button>
+    {{else}}
+      {{> RecipeForm}}
+  {{/if}}
+
+  <section class="recipes">
+    {{#if Template.subscriptionsReady}}
+
+      {{#each recipe in recipes}}
+        {{> RecipeItem recipe=recipe}}
+      {{/each}}
+
+    {{else}}
+      <p>Loading...</p>
+    {{/if}}
+  </section>
+</template>

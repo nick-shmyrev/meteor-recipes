@@ -1,0 +1,31 @@
+<template name="RecipeItem">
+  <article class="recipe {{#if recipe.inMenu}}in-menu{{/if}}">
+    <h3>{{recipe.name}}</h3>
+
+    <i class="fa fa-pencil"></i>
+    <i class="fa fa-trash"></i>
+
+    {{#if not isEditing}}
+
+        <a href="/recipes/{{recipe._id}}">View Details</a>
+
+        {{#if recipe.inMenu}}
+          <button class="btn-deny toggle-menu">Remove From Menu</button>
+        {{else}}
+          <button class="btn-primary toggle-menu">Add To Menu</button>
+        {{/if}}
+
+      {{else}}
+
+        {{> quickForm
+          collection=Recipes
+          id=updateRecipeId
+          type="method-update"
+          meteormethod="Recipes.update"
+          doc=this.recipe
+          autosave=true}}
+
+    {{/if}}
+
+  </article>
+</template>
